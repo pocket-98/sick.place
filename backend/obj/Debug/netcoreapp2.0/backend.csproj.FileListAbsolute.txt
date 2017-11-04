@@ -1,0 +1,10 @@
+C:\Users\nolanes\Desktop\hacknc2017\sick.place\backend\bin\Debug\netcoreapp2.0\backend.deps.json
+C:\Users\nolanes\Desktop\hacknc2017\sick.place\backend\bin\Debug\netcoreapp2.0\backend.runtimeconfig.json
+C:\Users\nolanes\Desktop\hacknc2017\sick.place\backend\bin\Debug\netcoreapp2.0\backend.runtimeconfig.dev.json
+C:\Users\nolanes\Desktop\hacknc2017\sick.place\backend\bin\Debug\netcoreapp2.0\backend.dll
+C:\Users\nolanes\Desktop\hacknc2017\sick.place\backend\bin\Debug\netcoreapp2.0\backend.pdb
+C:\Users\nolanes\Desktop\hacknc2017\sick.place\backend\obj\Debug\netcoreapp2.0\backend.csproj.CoreCompileInputs.cache
+C:\Users\nolanes\Desktop\hacknc2017\sick.place\backend\obj\Debug\netcoreapp2.0\backend.AssemblyInfoInputs.cache
+C:\Users\nolanes\Desktop\hacknc2017\sick.place\backend\obj\Debug\netcoreapp2.0\backend.AssemblyInfo.cs
+C:\Users\nolanes\Desktop\hacknc2017\sick.place\backend\obj\Debug\netcoreapp2.0\backend.dll
+C:\Users\nolanes\Desktop\hacknc2017\sick.place\backend\obj\Debug\netcoreapp2.0\backend.pdb
