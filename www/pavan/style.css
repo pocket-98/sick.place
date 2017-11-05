@@ -24,9 +24,9 @@ body {
 }
 
 #map:before {
-	content: none;
+	content: "";
 	display: block;
-	padding-top: 100%;
+	padding-top: 66.67%;
 }
 
 #report-sickness-button {
