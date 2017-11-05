@@ -13,7 +13,7 @@
     crossorigin=""></script>
     <meta></meta>
   </head>
-  <body>
+  <body onload="getLocation()">
     <h1>Sick Place</h1>
     <h3>Real-Time Map</h3>
     <a href="report.html" target="_blank">Report Me!</a>
@@ -22,6 +22,7 @@
     <script src="js/leaflet.js"></script>
     <script src="script_blank.js"></script>
 
+>>>>>>> d76c7dd90288df302b575844b4c5aaa366468b6a
     <script type="text/javascript">
 	  function submit() { 
 	    var lat = document.getElementById("latitude").value;
@@ -29,6 +30,15 @@
 		var txt = "<p>"+"("+lat+","+long+")"+"</p>";
 		document.getElementById("btn").after(txt);
 	  }
+
+      function getLocation() {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var lat = position.coords.latitude;
+          var lon = position.coords.longitude;
+          console.log("("+lat+","+lon+")");
+          document.getElementById("btn").after("("+lat+","+lon+")");
+        });
+      }
 	</script>
 	
     <!--<svg id="artboard"></svg>-->
