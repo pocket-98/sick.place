@@ -5,8 +5,8 @@ $(document).ready(function() {
 
 	//initialize map
 	main.map = L.map("map");
-	L.mapbox.accessToken = "pk.eyJ1Ijoic3l6OTkiLCJhIjoiY2o5bTE3ZjJyNHA4NjMzbHNsdjZ1ZzJjZSJ9.O7McJy9z5ioFmv3mxfYyYw";
-	var url = "https://api.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=" + L.mapbox.accessToken;
+	L.mapbox.accessToken = main.token;
+	var url = main.url + "?access_token=" + L.mapbox.accessToken;
 	var copyright = { attribution: '\xA9 <a href="https://www.mapbox.com/feedback/">Mapbox</a> \xA9 <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' };
 	var mapboxTiles = L.tileLayer(url, copyright);
 	main.map.on('load', pullNewPoints);
