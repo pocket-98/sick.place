@@ -18,7 +18,7 @@ namespace backend.Controllers
         }
 
         //severity: 0-1
-        public async Task<IActionResult> SubmitSickness(double latitude, double longitude, float severity, SicknessType sicknessType)
+        public async Task<IActionResult> SubmitReport(double latitude, double longitude, float severity, SicknessType sicknessType)
         {
             //Verify data
             latitude = Math.Clamp(latitude, -180d, 180d);
