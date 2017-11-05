@@ -23,30 +23,39 @@
             <h4 class="modal-title">Report Sickness</h4>
           </div>
           <div class="modal-body container-fluid">
-            <h3>Location</h3>
-            <div class="row" style="text-align: center;">
-              <div class="col-xs-3">
-                <input id="latitude" class="input" type="text" placeholder="Latitude" readonly/>
+            <div style="text-align: center;">
+              <h3>Location</h3>
+              <div class="row">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-3">
+                  <input id="latitude" class="input" type="text" placeholder="Latitude" readonly/>
+                </div>
+                <div class="col-xs-3">
+                  <input id="longitude" class="input" type="text" placeholder="Longitude" readonly/>
+                </div>
+                <div class="col-xs-4">
+                  <div class="button" onclick="getLocation()"><div>Fetch Location</div></div>
+                </div>
+                <div class="col-xs-1"></div>
               </div>
-              <div class="col-xs-3">
-                <input id="longitude" class="input" type="text" placeholder="Longitude" readonly/>
-              </div>
-              <div class="col-xs-1"></div>
-              <div class="col-xs-5">
-                <div class="button" onclick="getLocation()"><div>Fetch Location</div></div>
-              </div>
-              <div class="col-xs-1"></div>
-            </div>
-            <hr/>
-
-            <h3>Sickness Severity</h3>
-            <div class="row" style="text-align: center;">
-              <div class="col-xs-2 col-md-3"></div>
-              <div class="col-xs-8 col-md-6">
-                <input id="severity" class="input" type="number" placeholder="Sickness Severity" onkeyup="checkSeverity()"/>
+              <hr/>
+              <h3>Sickness Severity</h3>
+              <div class="row">
+                <div class="col-xs-2 col-md-3"></div>
+                <div class="col-xs-8 col-md-6">
+                  <input id="severity" class="input" type="number" placeholder="Sickness Severity" onkeyup="checkSeverity()" onchange="checkSeverity()"/>
+                <div class="col-xs-2 col-md-3"></div>
+                </div>
               </div>
               <div id="severity-error"></div>
-              <div class="col-xs-2 col-md-3"></div>
+              <hr/>
+              <div class="row">
+                <div class="col-xs-3"></div>
+                <div class="col-xs-6">
+                  <div class="button" onclick="submitReport()"><div>Submit Report</div></div>
+                </div>
+                <div class="col-xs-3"></div>
+              </div>
             </div>
           </div>
           <div class="modal-footer">

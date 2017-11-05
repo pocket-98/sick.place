@@ -84,11 +84,13 @@ body {
 }
 
 .input {
+	width: 100%;
+	max-width: 100%;
 	margin: 15px 5px;
 	padding: 10px;
 	font-size: 1.2em;
 }
 
-#error {
-	color: #FF3344";
+.error {
+	color: #FF3344;
 }
