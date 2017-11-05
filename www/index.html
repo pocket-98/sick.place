@@ -2,14 +2,27 @@
 <html>
   <head>
     <title>Sick Place</title>
-    <link href="css/leaflet.css" type="text/css" rel="stylesheet">
-    <link href="css/style_blank.css" type="text/css" rel="stylshee">
+    <link href="css/leaflet.css" type="text/css" rel=stylesheet>
+    <link href="css/style_blank.css" type="text/css" rel=stylsheet>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
+    integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+    crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
+    integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
+    crossorigin=""></script>
     <meta></meta>
   </head>
   <body>
-  
+    <h1>Sick Place</h1>
+    <h3>Real-Time Map</h3>
+    <div id="map"></div>
+    <script src="js/jquery.js"></script>
+    <script src="js/leaflet.js"></script>
+    <script src="script_blank.js"></script>
+
     <script type="text/javascript">
-	  function submit() {
+	  function submit() { 
 	    var lat = document.getElementById("latitude").value;
 	    var long = document.getElementById("longitude").value;
 		var txt = "<p>"+"("+lat+","+long+")"+"</p>";
@@ -17,7 +30,6 @@
 	  }
 	</script>
 	
-    <h1>Sick Place</h1>
     <svg id="artboard"></svg>
     <link rel="stylesheet" type="text/css" href="./style.css">
 	
@@ -27,7 +39,7 @@
 	<p>Longitude</p>
 	<p><input type="text" id="longitude" size="20"/></p>
 	
-	<button id="btn" onclick="submit()"> Button </button>
+	<button id="btn" onclick="submit()"> Submit </button>
 	
   </body>
 </html>
