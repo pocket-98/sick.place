@@ -20,6 +20,10 @@ namespace backend.Controllers
         //severity: 0-1
         public async Task<IActionResult> SubmitReport(double latitude, double longitude, float severity, SicknessType sicknessType)
         {
+            //TODO: remove this in prod
+            latitude += Fudge();
+            longitude += Fudge();
+
             //Verify data
             latitude = Math.Clamp(latitude, -180d, 180d);
             longitude = Math.Clamp(longitude, -180d, 180d); //what is actual lon range?
@@ -69,6 +73,12 @@ namespace backend.Controllers
                 );
 
             return Json(sicknesses);
+        }
+
+        private double Fudge()
+        {
+            var r = new Random();
+            return ((r.NextDouble()*2)-1) * 0.005;
         }
     }
 }

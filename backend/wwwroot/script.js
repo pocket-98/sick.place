@@ -92,7 +92,7 @@ function pullNewPoints() {
     $.get("api/sicknessinarea", request, function(sickPoints) {
 		main.sickPoints = sickPoints;
 		main.markerGroup.clearLayers();
-        console.log(sickPoints);
+		
         for (var i in sickPoints) {
 			var sickPoint = sickPoints[i];
 			var coord = L.latLng(sickPoint['latitude'], sickPoint['longitude']);
