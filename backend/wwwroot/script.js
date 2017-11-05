@@ -1,7 +1,7 @@
 $(document).ready(function() {
-	//make button follow mouse
-	//$(window).on("mousemove swipe click tap" , function(e) { updateButtonPosition(e.pageX, e.pageY); });
-	updateButtonPosition(window.innerWidth/2, window.innerHeight/2);
+	//get current location
+	getLocation();
+	$("#report-sickness-modal").modal().
 
 	//initialize map
 	main.map = L.map("map");
@@ -10,30 +10,21 @@ $(document).ready(function() {
 	var copyright = { attribution: '\xA9 <a href="https://www.mapbox.com/feedback/">Mapbox</a> \xA9 <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' };
 	var mapboxTiles = L.tileLayer(url, copyright);
 	main.map.on('load', pullNewPoints);
-	main.map.addLayer(mapboxTiles).setView([35.9132, -79.0558], 15);
+	main.map.addLayer(mapboxTiles).setView([main.latitude, main.longitude], 15);
 	main.map.on('moveend', pullNewPoints); //called on move and zoom
 
+	//create layer group
 	main.markerGroup = L.layerGroup();
 	main.markerGroup.addTo(main.map);
 });
 
-function updateButtonPosition(x, y) {
-	var button = $("#report-sickness-button");
-	var offsetX = button[0].clientWidth / 2;
-	var offsetY = button[0].clientHeight / 2;
-	button.css({
-		left: (x-offsetX) + "px",
-		top: (y-offsetY) + "px"
-	});
-}
-
 function getLocation() {
 	navigator.geolocation.getCurrentPosition(function(position) {
 		var precision = 5;
-		var lat = position.coords.latitude.toFixed(precision);
-		var lon = position.coords.longitude.toFixed(precision);
-		$("#latitude").val(lat + "\xB0");
-		$("#longitude").val(lon + "\xB0");
+		main.latitude = position.coords.latitude.toFixed(precision);
+		main.longitude = position.coords.longitude.toFixed(precision);
+		$("#latitude").val(main.latitude + "\xB0");
+		$("#longitude").val(main.longitude + "\xB0");
 	});
 }
 
@@ -53,13 +44,11 @@ function checkSeverity() {
 }
 
 function submitReport() {
-	var latitude = parseFloat($("#latitude").val());
-	var longitude = parseFloat($("#longitude").val());
 	var severity = parseFloat($("#severity").val()).toFixed(3);
-	if (!checkSeverity() && latitude && longitude) {
+	if (!checkSeverity() && main.latitude && main.longitude) {
 		request = {
-			latitude: latitude,
-			longitude: longitude,
+			latitude: main.latitude,
+			longitude: main.longitude,
 			severity: severity,
 			sicknessType: 0
 		};
