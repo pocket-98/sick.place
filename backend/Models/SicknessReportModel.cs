@@ -11,8 +11,8 @@ namespace backend.Models
         public long Timestamp { get; set; }
 
         //Metadata from user
-        public double Latitute { get; set; }
-        public double Longitute { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
 
         //Sickness info from user
         public float Severity { get; set; }

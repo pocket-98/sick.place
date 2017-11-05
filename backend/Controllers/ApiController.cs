@@ -10,8 +10,15 @@ namespace backend.Controllers
 {
     public class ApiController : Controller
     {
+        private readonly SickPlaceContext _context;
+
+        public ApiController(SickPlaceContext context)
+        {
+            _context = context;
+        }
+
         //severity: 0-1
-        public IActionResult SubmitSickness(double latitude, double longitude, float severity, SicknessType sicknessType)
+        public async Task<IActionResult> SubmitSickness(double latitude, double longitude, float severity, SicknessType sicknessType)
         {
             //Verify data
             latitude = Math.Clamp(latitude, -180d, 180d);
@@ -28,17 +35,26 @@ namespace backend.Controllers
             var report = new SicknessReportModel()
             {
                 Timestamp = epochTimestamp,
-                Latitute = latitude,
-                Longitute = longitude,
+                Latitude = latitude,
+                Longitude = longitude,
                 Severity = severity,
                 Sickness = sicknessType,
             };
 
-            return Json(report);
+            //Store report
+            if (ModelState.IsValid)
+            {
+                _context.Add(report);
+                await _context.SaveChangesAsync();
+                //return RedirectToAction(nameof(Index)); TODO: redirect?
+                return Content("saved report to db");
+            }
+
+            return Content("db failed");
         }
         public IActionResult SicknessInArea(double lat1, double lon1, double lat2, double lon2)
         {
-            return Json(new SicknessReportModel { Latitute = 31.4, Longitute = 12.8 });
+            return Json(new SicknessReportModel { Latitude = 31.4, Longitude = 12.8 });
         }
     }
 }
