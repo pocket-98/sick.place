@@ -1,0 +1,5 @@
+html, body, #map {
+    height: 180px;
+    width: 100%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
