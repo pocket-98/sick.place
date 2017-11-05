@@ -7,3 +7,9 @@ html {
 body {
     background: rgb(183, 227, 255);
 }
+
+svg {
+    background: white;
+    height: 15vh;
+    width: 98vw;
+}
