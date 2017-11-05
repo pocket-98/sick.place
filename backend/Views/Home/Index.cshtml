@@ -14,14 +14,13 @@
   <body>
     <script type="text/javascript">
       var main = {
+        token: "pk.eyJ1Ijoic3l6OTkiLCJhIjoiY2o5bTE3ZjJyNHA4NjMzbHNsdjZ1ZzJjZSJ9.O7McJy9z5ioFmv3mxfYyYw",
+        url: "https://api.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png",
         map: null,
         sickPoints: null,
         markerGroup: null,
       }
     </script>
-    <div id="report-sickness-button" data-toggle="modal" data-target="#report-sickness-modal">
-      <div>+</div>
-    </div>
 
     <!-- REPORT SICKNESS MODAL -->
     <div id="report-sickness-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Report Sickness">
@@ -80,15 +79,13 @@
       <div id="page" class="col-xs-12 col-sm-10 col-md-8">
         <h1 id="title">Sick Place</h1>
         <hr/>
-        <!-- LEAFLET -->
         <div id="map"></div>
-        <!-- END LEAFLET -->
         <hr/>
-        <!--div id="report-sickness-button">
+        <div id="report-sickness-button">
           <div class="button" data-toggle="modal" data-target="#report-sickness-modal">
             <div>+</div>
           </div>
-        </div-->
+        </div>
       </div>
       <div class="col-xs-0 col-sm-1 col-md-2"></div>
     </div>
