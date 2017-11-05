@@ -57,11 +57,15 @@ namespace backend.Controllers
         //p1 is lower left, p2 is upper right
         public IActionResult SicknessInArea(double lat1, double lon1, double lat2, double lon2)
         {
+            TimeSpan t = DateTime.UtcNow - new DateTime(1970, 1, 1);
+            long epochTimestamp = (long)t.TotalSeconds;
+
             var sicknesses =  _context.SicknessReport.Where(report =>
                 report.Latitude > lat1
                 && report.Latitude < lat2
                 && report.Longitude > lon1
                 && report.Longitude < lon2
+                && epochTimestamp - report.Timestamp < 3600 * 24 * 14 * report.Severity*report.Severity
                 );
 
             return Json(sicknesses);

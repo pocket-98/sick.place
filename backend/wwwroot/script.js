@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	//make button follow mouse
-	$(window).on("mousemove swipe click tap" , function(e) { updateButtonPosition(e.pageX, e.pageY); });
+	//$(window).on("mousemove swipe click tap" , function(e) { updateButtonPosition(e.pageX, e.pageY); });
 	updateButtonPosition(window.innerWidth/2, window.innerHeight/2);
 
 	//initialize map
@@ -12,6 +12,9 @@ $(document).ready(function() {
 	main.map.on('load', pullNewPoints);
 	main.map.addLayer(mapboxTiles).setView([35.9132, -79.0558], 15);
 	main.map.on('moveend', pullNewPoints); //called on move and zoom
+
+	main.markerGroup = L.layerGroup();
+	main.markerGroup.addTo(main.map);
 });
 
 function updateButtonPosition(x, y) {
@@ -91,15 +94,9 @@ function pullNewPoints() {
 		main.markerGroup.clearLayers();
         console.log(sickPoints);
         for (var i in sickPoints) {
-            injectPoint(sickPoints[i]);
+			var sickPoint = sickPoints[i];
+			var coord = L.latLng(sickPoint['latitude'], sickPoint['longitude']);
+			var marker = L.marker(coord).addTo(main.markerGroup);
         }
     });
-}
-
-function injectPoint(sickPoint) {
-    console.log(sickPoint);
-
-    var coord = L.latLng(sickPoint['latitude'], sickPoint['longitude']);
-
-    var marker = L.marker(coord).addTo(main.map);
 }
