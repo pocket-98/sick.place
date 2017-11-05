@@ -35,11 +35,9 @@ function pullNewPoints() {
 }
 
 function injectPoint(sickPoint) {
-    var point = L.latLngToLayerPoint(L.LatLng(sickPoint['latitude'], sickPoint['longitude']));
-    var circle = L.circle([sickPoint['latitude'], sickPoint['longitude']], {
-        color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5,
-        radius: 500
-    }).addTo(map);
+    console.log(sickPoint);
+
+    var coord = L.latLng(sickPoint['latitude'], sickPoint['longitude']);
+
+    var marker = L.marker(coord).addTo(map);
 }
