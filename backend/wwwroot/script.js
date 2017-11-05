@@ -45,12 +45,13 @@ function checkSeverity() {
 
 function submitReport() {
 	var severity = parseFloat($("#severity").val()).toFixed(3);
+	var sicknessType = parseInt($("#sicknessType").val());
 	if (!checkSeverity() && main.latitude && main.longitude) {
 		request = {
 			latitude: main.latitude,
 			longitude: main.longitude,
 			severity: severity,
-			sicknessType: 0
+			sicknessType: sicknessType
 		};
 		$.get("api/submitreport", request, function(data) {
 			if (data) {
