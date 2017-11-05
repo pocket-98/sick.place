@@ -15,6 +15,20 @@ body {
 	color: #555577;
 }
 
+#map {
+	width: 100%;
+	max-width: 100%;
+	position: relative;
+	top: 0px;
+	bottom: 0px;
+}
+
+#map:before {
+	content: none;
+	display: block;
+	padding-top: 100%;
+}
+
 #report-sickness-button {
 	width: 30px;
     height:30px;
