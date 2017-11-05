@@ -1,7 +1,4 @@
 $(document).ready(function() {
-	//Slider BS
-	$("#severity").slider();
-
 	//get current location
 	getLocation();
 
