@@ -5,6 +5,25 @@
     <meta></meta>
   </head>
   <body>
+  
+    <script type="text/javascript">
+	  function submit() {
+	    var lat = document.getElementById("latitude").value;
+	    var long = document.getElementById("longitude").value;
+		var txt = "<p>"+"("+lat+","+long+")"+"</p>";
+		document.getElementById("btn").after(txt);
+	  }
+	</script>
+	
     <h1>Sick Place</h1>
+	
+	<p>Latitude</p>
+	<p><input type="text" id="latitude" size="20"/></p>
+	
+	<p>Longitude</p>
+	<p><input type="text" id="longitude" size="20"/></p>
+	
+	<button id="btn" onclick="submit()"> Button </button>
+	
   </body>
 </html>
