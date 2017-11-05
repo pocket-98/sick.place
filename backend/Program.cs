@@ -26,7 +26,7 @@ namespace backend
                     options.Listen(IPAddress.Loopback, 80);
                     options.Listen(IPAddress.Loopback, 443, listenOptions =>
                     {
-                        listenOptions.UseHttps("testCert.pfx", "testPassword");
+                        listenOptions.UseHttps("../../testCert.pfx", "password");
                     });
                 })
                 .Build();      
