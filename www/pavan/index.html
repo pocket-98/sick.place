@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Sick Place</title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+        <div id="report-sickness-button">
+          <div class="button" data-toggle="modal" data-target="#report-sickness-modal">
+            <div>+</div>
+          </div>
+        </div>
+
+    <!-- REPORT SICKNESS MODAL -->
+    <div id="report-sickness-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Report Sickness">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Report Sickness</h4>
+          </div>
+          <div class="modal-body container-fluid">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Dismiss</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END REPORT SICKNESS MODAL -->
+
+    <div class="container" style="margin: 0 auto">
+      <div class="col-xs-0 col-sm-1 col-md-2"></div>
+      <div id="page" class="col-xs-12 col-sm-10 col-md-8">
+        <h1 id="title">Sick Place</h1>
+        <hr/>
+        <!-- LEAFLET -->
+        <div id="leaflet-shit"></div>
+        <!-- END LEAFLET -->
+        <hr/>
+        <!--div id="report-sickness-button">
+          <div class="button" data-toggle="modal" data-target="#report-sickness-modal">
+            <div>+</div>
+          </div>
+        </div-->
+      </div>
+      <div class="col-xs-0 col-sm-1 col-md-2"></div>
+    </div>
+
+  </body>
+</html>
