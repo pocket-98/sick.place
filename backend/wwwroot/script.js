@@ -87,6 +87,8 @@ function pullNewPoints() {
     };
 
     $.get("api/sicknessinarea", request, function(sickPoints) {
+		main.sickPoints = sickPoints;
+		main.markerGroup.clearLayers();
         console.log(sickPoints);
         for (var i in sickPoints) {
             injectPoint(sickPoints[i]);
