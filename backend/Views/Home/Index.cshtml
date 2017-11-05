@@ -16,6 +16,8 @@
       var main = {
         token: "pk.eyJ1Ijoic3l6OTkiLCJhIjoiY2o5bTE3ZjJyNHA4NjMzbHNsdjZ1ZzJjZSJ9.O7McJy9z5ioFmv3mxfYyYw",
         url: "https://api.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png",
+        latitude: 0,
+        longitude: 0,
         map: null,
         sickPoints: null,
         markerGroup: null,
@@ -81,10 +83,8 @@
         <hr/>
         <div id="map"></div>
         <hr/>
-        <div id="report-sickness-button">
-          <div class="button" data-toggle="modal" data-target="#report-sickness-modal">
-            <div>+</div>
-          </div>
+        <div id="report-sickness-button" data-toggle="modal" data-target="#report-sickness-modal" onclick="getLocation()">
+          <div>+</div>
         </div>
       </div>
       <div class="col-xs-0 col-sm-1 col-md-2"></div>
