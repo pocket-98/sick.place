@@ -17,5 +17,13 @@ namespace backend.Models
         //Sickness info from user
         public float Severity { get; set; }
         public SicknessType Sickness { get; set; }
+
+        public string SicknessName
+        {
+            get
+            {
+                return Sickness.ToString();
+            }
+        }
     }
 }

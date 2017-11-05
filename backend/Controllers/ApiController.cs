@@ -47,14 +47,24 @@ namespace backend.Controllers
                 _context.Add(report);
                 await _context.SaveChangesAsync();
                 //return RedirectToAction(nameof(Index)); TODO: redirect?
-                return Content("saved report to db");
+                return Json(new {Success = false, Message = "Sickness reported. Thanks!"});
+                //return Content("saved report to db");
             }
 
-            return Content("db failed");
+            return Json(new {Success = false, Message = "Uh oh, sickness report failed!"});
         }
+
+        //p1 is lower left, p2 is upper right
         public IActionResult SicknessInArea(double lat1, double lon1, double lat2, double lon2)
         {
-            return Json(new SicknessReportModel { Latitude = 31.4, Longitude = 12.8 });
+            var sicknesses =  _context.SicknessReport.Where(report =>
+                report.Latitude > lat1
+                && report.Latitude < lat2
+                && report.Longitude > lon1
+                && report.Longitude < lon2
+                );
+
+            return Json(sicknesses);
         }
     }
 }
