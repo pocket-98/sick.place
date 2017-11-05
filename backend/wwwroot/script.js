@@ -78,7 +78,7 @@ function pullNewPoints() {
     bounds = main.map.getBounds();
     p1 = bounds.getSouthWest()
     p2 = bounds.getNorthEast();
-
+    
     var request = {
         lat1: p1.lat,
         lon1: p1.lng,
@@ -86,10 +86,18 @@ function pullNewPoints() {
         lon2: p2.lng,
     };
 
-    $.get("http://localhost:5000/api/sicknessinarea", request, function(sickPoints) {
+    $.get("api/sicknessinarea", request, function(sickPoints) {
         console.log(sickPoints);
-		        for (var i in sickPoints) {
-        		    injectPoint(sickPoints[i]);
-				 }
+        for (var i in sickPoints) {
+            injectPoint(sickPoints[i]);
+        }
     });
+}
+
+function injectPoint(sickPoint) {
+    console.log(sickPoint);
+
+    var coord = L.latLng(sickPoint['latitude'], sickPoint['longitude']);
+
+    var marker = L.marker(coord).addTo(main.map);
 }
