@@ -10,9 +10,13 @@ namespace backend.Controllers
 {
     public class ApiController : Controller
     {
+        public IActionResult SubmitSickness()
+        {
+            return null;
+        }
         public IActionResult SicknessInArea(double lat1, double lon1, double lat2, double lon2)
         {
-            return Content("lat1=" + lat1);
+            return Json(new SicknessModel { Latitute = 31.4, Longitute = 12.8 });
         }
     }
 }
