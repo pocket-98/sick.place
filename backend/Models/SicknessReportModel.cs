@@ -1,4 +1,5 @@
 using System;
+using backend.Shared;
 
 namespace backend.Models
 {
@@ -22,7 +23,7 @@ namespace backend.Models
         {
             get
             {
-                return Sickness.ToString();
+                return Sickness.ToPrettyString();
             }
         }
     }

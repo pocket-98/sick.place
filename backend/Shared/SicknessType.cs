@@ -1,8 +1,8 @@
-namespace backend
+namespace backend.Shared
 {
     public enum SicknessType
     {
-        UNKNOWN = 0,
+        UNKNOWN_SICKNESS = 0,
         BRONCHITIS = 1,
         COLD = 2,
         FLU = 3,

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using backend.Models;
+using backend.Shared;
 
 namespace backend.Controllers
 {
@@ -30,7 +31,7 @@ namespace backend.Controllers
             severity = Math.Clamp(severity, 0f, 1f);
             if (!Enum.IsDefined(typeof(SicknessType), sicknessType))
             {
-                sicknessType = SicknessType.UNKNOWN;
+                sicknessType = SicknessType.UNKNOWN_SICKNESS;
             }
 
             TimeSpan t = DateTime.UtcNow - new DateTime(1970, 1, 1);
