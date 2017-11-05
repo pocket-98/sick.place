@@ -12539,11 +12539,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nolanes\\Desktop\\hacknc2017\\sick.place\\backend\\backend.csproj",
+      "projectUniqueName": "c:\\Users\\nolanes\\Desktop\\hacknc2017\\sick.place\\backend\\backend.csproj",
       "projectName": "backend",
-      "projectPath": "C:\\Users\\nolanes\\Desktop\\hacknc2017\\sick.place\\backend\\backend.csproj",
+      "projectPath": "c:\\Users\\nolanes\\Desktop\\hacknc2017\\sick.place\\backend\\backend.csproj",
       "packagesPath": "C:\\Users\\nolanes\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nolanes\\Desktop\\hacknc2017\\sick.place\\backend\\obj\\",
+      "outputPath": "c:\\Users\\nolanes\\Desktop\\hacknc2017\\sick.place\\backend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
