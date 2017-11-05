@@ -27,6 +27,14 @@ namespace backend
 
             services.AddDbContext<SickPlaceContext>(options =>
                 options.UseSqlite("Data Source=SickPlace.sqlite"));
+            
+            //TODO: remove this in prod
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+            }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,6 +42,7 @@ namespace backend
         {
             if (env.IsDevelopment())
             {
+                app.UseCors("MyPolicy");
                 app.UseDeveloperExceptionPage();
             }
             else
