@@ -23,8 +23,8 @@ namespace backend
                 .UseStartup<Startup>()
                 .UseKestrel(options =>
                 {
-                    options.Listen(IPAddress.Loopback, 80);
-                    options.Listen(IPAddress.Loopback, 443, listenOptions =>
+                    options.Listen(IPAddress.Any, 80);
+                    options.Listen(IPAddress.Any, 443, listenOptions =>
                     {
                         listenOptions.UseHttps("../../testCert.pfx", "password");
                     });

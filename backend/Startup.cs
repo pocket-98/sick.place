@@ -8,6 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using backend.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Rewrite;
 
 namespace backend
 {
@@ -24,6 +26,11 @@ namespace backend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            
+            services.Configure<MvcOptions>(options =>
+            {
+                options.Filters.Add(new RequireHttpsAttribute());
+            });
 
             services.AddDbContext<SickPlaceContext>(options =>
                 options.UseSqlite("Data Source=SickPlace.sqlite"));
@@ -40,6 +47,9 @@ namespace backend
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            var options = new RewriteOptions()
+                .AddRedirectToHttps();
+
             if (env.IsDevelopment())
             {
                 app.UseCors("MyPolicy");
