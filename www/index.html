@@ -13,11 +13,7 @@
     crossorigin=""></script>
     <meta></meta>
   </head>
-<<<<<<< HEAD
   <body onload="getLocation()">
-  
-=======
-  <body>
     <h1>Sick Place</h1>
     <h3>Real-Time Map</h3>
     <div id="map"></div>
@@ -39,7 +35,7 @@
           var lat = position.coords.latitude;
           var lon = position.coords.longitude;
           console.log("("+lat+","+lon+")");
-          document.write("("+lat+","+lon+")");
+          document.getElementById("btn").after("("+lat+","+lon+")");
         });
       }
 	</script>
