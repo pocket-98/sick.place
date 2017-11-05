@@ -24,6 +24,7 @@ function getLocation() {
 		main.longitude = position.coords.longitude.toFixed(precision);
 		$("#latitude").val(main.latitude + "\xB0");
 		$("#longitude").val(main.longitude + "\xB0");
+		main.map.panTo([main.latitude, main.longitude]);
 	});
 }
 
