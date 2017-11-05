@@ -6,7 +6,7 @@
     <link href="css/style_blank.css" type="text/css" rel="stylshee">
     <meta></meta>
   </head>
-  <body>
+  <body onload="getLocation()">
   
     <script type="text/javascript">
 	  function submit() {
@@ -15,6 +15,15 @@
 		var txt = "<p>"+"("+lat+","+long+")"+"</p>";
 		document.getElementById("btn").after(txt);
 	  }
+
+      function getLocation() {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var lat = position.coords.latitude;
+          var lon = position.coords.longitude;
+          console.log("("+lat+","+lon+")");
+          document.write("("+lat+","+lon+")");
+        });
+      }
 	</script>
 	
     <h1>Sick Place</h1>
