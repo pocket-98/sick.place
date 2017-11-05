@@ -1,0 +1,56 @@
+body {
+	background-color: #EEFFFF;
+}
+
+#page {
+	margin: 30px auto;
+	padding: 20px;
+	background-color: #F7FFFF;
+	text-align: center;
+	box-shadow: 3px 5px 20px #AAAAAA;
+}
+
+#title {
+	margin: 10px auto;
+	color: #555577;
+}
+
+.button {
+	width: 30px;
+    height:30px;
+	margin: 0px;
+	text-align: center;
+	border-radius: 100%;
+	background-color: #FFAACC;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	font-weight: bold;
+	color: #FFFFFF;
+	box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+}
+
+.button:hover {
+	color: #FFFFFF;
+	background-color: #44AAFF;
+	box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+}
+
+.button:active {
+	background-color: #50B0FF;
+}
+
+.button * {
+	padding: 5px;
+	margin: 0px;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none; 
+}
+
+#report-sickness-button {
+	padding: 0px;
+	margin: 0px;
+	position: absolute;
+	z-index: 1;
+}
