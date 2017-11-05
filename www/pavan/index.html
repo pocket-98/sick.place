@@ -4,15 +4,14 @@
     <title>Sick Place</title>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/utils.js"></script>
     <script type="text/javascript" src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-        <div id="report-sickness-button">
-          <div class="button" data-toggle="modal" data-target="#report-sickness-modal">
-            <div>+</div>
-          </div>
+        <div id="report-sickness-button" data-toggle="modal" data-target="#report-sickness-modal">
+          <div>+</div>
         </div>
 
     <!-- REPORT SICKNESS MODAL -->
@@ -24,6 +23,31 @@
             <h4 class="modal-title">Report Sickness</h4>
           </div>
           <div class="modal-body container-fluid">
+            <h3>Location</h3>
+            <div class="row" style="text-align: center;">
+              <div class="col-xs-3">
+                <input id="latitude" class="input" type="text" placeholder="Latitude" readonly/>
+              </div>
+              <div class="col-xs-3">
+                <input id="longitude" class="input" type="text" placeholder="Longitude" readonly/>
+              </div>
+              <div class="col-xs-1"></div>
+              <div class="col-xs-5">
+                <div class="button" onclick="getLocation()"><div>Fetch Location</div></div>
+              </div>
+              <div class="col-xs-1"></div>
+            </div>
+            <hr/>
+
+            <h3>Sickness Severity</h3>
+            <div class="row" style="text-align: center;">
+              <div class="col-xs-2 col-md-3"></div>
+              <div class="col-xs-8 col-md-6">
+                <input id="severity" class="input" type="number" placeholder="Sickness Severity" onkeyup="checkSeverity()"/>
+              </div>
+              <div id="severity-error"></div>
+              <div class="col-xs-2 col-md-3"></div>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-dismiss="modal">Dismiss</button>
