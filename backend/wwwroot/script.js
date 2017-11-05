@@ -1,7 +1,6 @@
 $(document).ready(function() {
 	//get current location
 	getLocation();
-	$("#report-sickness-modal").modal().
 
 	//initialize map
 	main.map = L.map("map");
